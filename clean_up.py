@@ -37,14 +37,13 @@ def delete_duplicate_file(directory_path):
             if file_name[lt + 1:rt].isdigit():
                 file_path = directory_path + "\\" + file_name
                 size += os.path.getsize(file_path)
-                cnt += 0
+                cnt += 1
                 print(file_name)
                 os.remove(file_path)
     else:
         print("삭제한 파일 수:", cnt, end=", ")
-        print("삭제된 파일 총 용량:", size)
+        print("삭제된 파일 총 용량:", convert_size(size))
 
 
 # 삭제하고픈 디렉토리 경로를 반드시 raw string으로 입력
 delete_duplicate_file(r'C:\Users\l\PycharmProjects\please-delete-duplicate-files\test')
-
